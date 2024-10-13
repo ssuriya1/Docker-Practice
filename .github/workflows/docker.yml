@@ -7,10 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout reporitory
+        uses: actions/checkout@v4
+
       - name: Build Docker file
-        run: |
-            ls
-            docker build ./
+        run: docker build .
         
       - name: List all Docker Containers
         run: |
