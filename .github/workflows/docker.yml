@@ -15,8 +15,8 @@ jobs:
         
       - name: List all Docker Containers
         run: |
-            imageName = $(grep -o '[a-fA-F0-9]{64}' containers.log)
-            echo $imageName
-            docker run $imageName
+            IMAGE_NAME=$(grep -o '[a-fA-F0-9]{64}' containers.log)
+            echo "IMAGE_NAME>>$IMAGE_NAME" >> GITHUB_ENV
+            docker run $IMAGE_NAME
             docker ps -a
 
