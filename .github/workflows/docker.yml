@@ -8,7 +8,9 @@ jobs:
 
     steps:
       - name: Build Docker file
-        run: docker build .
+        run: |
+            ls
+            docker build ./
         
       - name: List all Docker Containers
         run: |
