@@ -1,7 +1,5 @@
 FROM node
 
-RUN ["ls", "-ltr"]
-
 WORKDIR /app
 
 COPY . ./
