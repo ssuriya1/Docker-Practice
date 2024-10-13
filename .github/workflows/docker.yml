@@ -11,10 +11,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker file
-        run: docker build .
+        run: docker build . | tee containers.log
         
       - name: List all Docker Containers
         run: |
-            docker ps | tee containers.log
+            imageName = $(grep -o '[a-fA-F0-9]{64}' containers.log)
+            echo $imageName
+            docker run $imageName
             docker ps -a
 
