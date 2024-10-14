@@ -17,7 +17,7 @@ jobs:
         run: |
           ls
           chmod +x containers.log
-          grep -o '[a-fA-F0-9]{64}' containers.log
+          # grep -o '[a-fA-F0-9]{64}' containers.log
           # echo "IMAGE_NAME>>$IMAGE_NAME" >> GITHUB_ENV
           # docker run $IMAGE_NAME
           docker ps -a
